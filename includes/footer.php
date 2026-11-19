@@ -1,8 +1,34 @@
+<?php
+?>
 </div>
 
 <footer class="footer-main">
     &copy; <?= date('Y') ?> ML Industries - Departamento de Sistemas
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<?php if (isset($_SESSION['login_exitoso'])): ?>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+
+        Toast.fire({
+            icon: "success",
+            title: "Sesión iniciada correctamente"
+        });
+    </script>
+    <?php unset($_SESSION['login_exitoso']); ?>
+<?php endif; ?>
 
 </body>
 </html>
