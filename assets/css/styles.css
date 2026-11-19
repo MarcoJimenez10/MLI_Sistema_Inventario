@@ -1,4 +1,3 @@
-/* assets/css/styles.css */
 :root {
   --bg-main: #f1f5f9;
   --bg-card: #ffffff;
@@ -244,4 +243,29 @@ tr:hover {
   color: var(--text-muted);
   font-size: 13px;
   margin-top: 40px;
+}
+
+
+
+/* Barra de Búsqueda y Filtros */
+.filter-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-input {
+    flex: 2;
+    min-width: 250px;
+}
+
+.filter-select {
+    flex: 1;
+    min-width: 180px;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
 }
