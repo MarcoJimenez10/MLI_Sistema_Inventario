@@ -1,8 +1,6 @@
-<?php
-?>
-</div> <!-- Cierre del contenedor principal -->
+</div>
 
-<footer style="text-align: center; padding: 20px; color: var(--text-muted); font-size: 13px; margin-top: 40px;">
+<footer class="footer-main">
     &copy; <?= date('Y') ?> ML Industries - Departamento de Sistemas
 </footer>
 

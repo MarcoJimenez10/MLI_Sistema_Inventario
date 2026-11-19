@@ -3,8 +3,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+$ruta_base = $ruta_base ?? '';
+
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.php");
+    header("Location: " . $ruta_base . "login.php");
     exit();
 }
 ?>
@@ -14,20 +16,16 @@ if (!isset($_SESSION['usuario_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario de Activos TI - ML Industries</title>
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="<?= $ruta_base ?>assets/css/styles.css">
 </head>
 <body>
 
-<header style="background-color: var(--primary); color: #fff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;">
-    <div>
-        <h2 style="margin: 0; font-size: 20px; color: #fff;">ML Industries - Gestión de Activos TI</h2>
-    </div>
-    <div style="display: flex; align-items: center; gap: 20px;">
-        <span style="font-size: 14px; font-weight: 500;">
-            <?= htmlspecialchars($_SESSION['nombre_completo']) ?> (<?= htmlspecialchars($_SESSION['rol']) ?>)
-        </span>
-        <a href="logout.php" class="btn btn-secondary" style="padding: 6px 12px; font-size: 13px;">Cerrar Sesión</a>
+<header class="topbar">
+    <h2 class="topbar-title">ML Industries - Gestión de Activos TI</h2>
+    <div class="topbar-user">
+        <span><?= htmlspecialchars($_SESSION['nombre_completo']) ?> (<?= htmlspecialchars($_SESSION['rol']) ?>)</span>
+        <a href="<?= $ruta_base ?>logout.php" class="btn btn-secondary">Cerrar Sesión</a>
     </div>
 </header>
 
-<div style="padding: 30px; max-width: 1300px; margin: 0 auto;">
+<div class="main-container">

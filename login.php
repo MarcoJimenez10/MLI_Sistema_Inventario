@@ -41,53 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - ML Industries Inventario</title>
-    <link rel="stylesheet" href="assets/css/estilos.css">
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #f1f5f9;
-        }
-        .login-card {
-            width: 100%;
-            max-width: 400px;
-            padding: 32px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border: 1px solid #cbd5e1;
-        }
-        .login-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 16px;
-            text-align: left;
-        }
-        .alert-error {
-            background-color: #fee2e2;
-            color: #dc2626;
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 14px;
-            margin-bottom: 16px;
-            border: 1px solid #fca5a5;
-        }
-        .btn-block {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    
 </head>
-<body>
+<body class="login-page">
 
 <div class="login-card">
     <h2 class="login-title">Iniciar Sesión</h2>
