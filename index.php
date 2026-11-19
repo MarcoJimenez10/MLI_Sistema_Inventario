@@ -29,7 +29,7 @@ $activos = $stmt->fetchAll();
         <h2 class="kpi-number text-funcional"><?= $funcionales ?></h2>
     </div>
     <div class="card kpi-card">
-        <span class="kpi-label">Dañado / Scrap</span>
+        <span class="kpi-label">Dañado</span>
         <h2 class="kpi-number text-scrap"><?= $scrap_count ?></h2>
     </div>
 </div>
@@ -71,7 +71,7 @@ $activos = $stmt->fetchAll();
                                 $class_badge = 'badge-funcional';
                                 if ($act['estado'] === 'En Resguardo') $class_badge = 'badge-resguardo';
                                 if ($act['estado'] === 'En Mantenimiento') $class_badge = 'badge-mantenimiento';
-                                if ($act['estado'] === 'Dañado / Scrap') $class_badge = 'badge-scrap';
+                                if ($act['estado'] === 'Dañado') $class_badge = 'badge-scrap';
                                 ?>
                                 <span class="badge <?= $class_badge ?>"><?= htmlspecialchars($act['estado']) ?></span>
                             </td>
