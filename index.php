@@ -68,7 +68,10 @@ $activos = $stmt->fetchAll();
 
 <div class="card toolbar-card">
     <h2 class="toolbar-title">Inventario General de Activos</h2>
-    <a href="modules/inventory/nuevo.php" class="btn btn-primary">+ Registrar Nuevo Activo</a>
+    <div class="action-group">
+        <a href="modules/inventory/exportar.php?buscar=<?= urlencode($busqueda) ?>&estado=<?= urlencode($filtro_estado) ?>" class="btn btn-success">Exportar Excel</a>
+        <a href="modules/inventory/nuevo.php" class="btn btn-primary">+ Registrar Nuevo Activo</a>
+    </div>
 </div>
 
 
@@ -82,7 +85,7 @@ $activos = $stmt->fetchAll();
             <select name="estado" class="form-control">
                 <option value="">Todos los estados</option>
                 <?php
-                $estados_lista = ['Funcional', 'En Resguardo', 'En Mantenimiento', 'Dañado / Scrap'];
+                $estados_lista = ['Funcional', 'En Resguardo', 'Dañado / Scrap'];
                 foreach ($estados_lista as $est) {
                     $selected = ($filtro_estado === $est) ? 'selected' : '';
                     echo "<option value=\"$est\" $selected>$est</option>";

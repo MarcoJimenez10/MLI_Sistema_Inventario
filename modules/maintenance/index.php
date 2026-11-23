@@ -118,7 +118,7 @@ $historial = $stmtHist->fetchAll();
                 <label for="nuevo_estado">Actualizar Estado del Equipo</label>
                 <select name="nuevo_estado" id="nuevo_estado" class="form-control">
                     <?php
-                    $estados = ['Funcional', 'En Resguardo', 'En Mantenimiento', 'Dañado / Scrap'];
+                    $estados = ['Funcional', 'En Resguardo', 'Dañado / Scrap'];
                     foreach ($estados as $est) {
                         $selected = ($activo['estado'] === $est) ? 'selected' : '';
                         echo "<option value=\"$est\" $selected>$est</option>";

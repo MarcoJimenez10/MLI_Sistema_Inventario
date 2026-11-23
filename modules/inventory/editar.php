@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label for="estado">Estado Operativo *</label>
                 <select name="estado" id="estado" class="form-control" required>
                     <?php
-                    $estados = ['Funcional', 'En Resguardo', 'En Mantenimiento', 'Dañado / Scrap'];
+                    $estados = ['Funcional', 'En Resguardo', 'Dañado / Scrap'];
                     foreach ($estados as $est) {
                         $selected = ($activo['estado'] === $est) ? 'selected' : '';
                         echo "<option value=\"$est\" $selected>$est</option>";

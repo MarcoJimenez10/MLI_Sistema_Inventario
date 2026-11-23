@@ -127,7 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <select name="estado" id="estado" class="form-control" required>
                     <option value="Funcional">Funcional</option>
                     <option value="En Resguardo" selected>En Resguardo</option>
-                    <option value="En Mantenimiento">En Mantenimiento</option>
                     <option value="Dañado / Scrap">Dañado</option>
                 </select>
             </div>
