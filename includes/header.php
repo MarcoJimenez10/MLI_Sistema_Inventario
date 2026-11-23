@@ -22,14 +22,14 @@ if (!isset($_SESSION['usuario_id'])) {
 
 <header class="topbar">
     <div class="topbar-left">
-        <img src="assets/img/logo_mli.svg" alt="ML Industries Logo" class="login-logo"/>
+        <img src="<?= $ruta_base ?>assets/img/logo_mli.svg" alt="ML Industries Logo" class="topbar-logo">
         <h2 class="topbar-title">Gestión de Activos TI</h2>
         <nav class="topbar-nav">
             <a href="<?= $ruta_base ?>index.php" class="nav-link">Inventario</a>
+            <a href="<?= $ruta_base ?>modules/maintenance/index.php" class="nav-link">Bitácora</a>
             <?php if ($_SESSION['rol'] === 'Administrador'): ?>
                 <a href="<?= $ruta_base ?>modules/users/index.php" class="nav-link">Usuarios</a>
             <?php endif; ?>
-            <a href="<?= $ruta_base ?>modules/inventory/bitacora.php" class="nav-link">Bitácora</a>
         </nav>
     </div>
 

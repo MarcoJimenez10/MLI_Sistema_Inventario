@@ -52,7 +52,7 @@ fprintf($salida, chr(0xEF).chr(0xBB).chr(0xBF));
 
 
 fputcsv($salida, [
-    'Folio ID',
+    'ID',
     'Tipo de Equipo',
     'Marca',
     'Modelo',
