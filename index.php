@@ -136,9 +136,19 @@ $activos = $stmt->fetchAll();
                                 ?>
                                 <span class="badge <?= $class_badge ?>"><?= htmlspecialchars($act['estado']) ?></span>
                             </td>
-                            <td>
-                                <a href="modules/inventory/editar.php?id=<?= urlencode($act['id_activo']) ?>" class="btn btn-secondary btn-sm">Editar</a>
+                           <td>
+                                <div class="action-group">
+                                    <a href="modules/inventory/editar.php?id=<?= urlencode($act['id_activo']) ?>" class="btn btn-secondary btn-sm">Editar</a>
+                                    <a href="modules/maintenance/index.php?id=<?= urlencode($act['id_activo']) ?>" class="btn btn-primary btn-sm">Bitácora</a>
+                                    
+                                    <?php if ($_SESSION['rol'] === 'Administrador'): ?>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmarEliminarActivo('<?= htmlspecialchars($act['id_activo'], ENT_QUOTES) ?>')">
+                                            Eliminar
+                                        </button>
+                                    <?php endif; ?>
+                                </div>
                             </td>
+                            
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -152,5 +162,24 @@ $activos = $stmt->fetchAll();
         </table>
     </div>
 </div>
+
+<script>
+function confirmarEliminarActivo(idActivo) {
+    Swal.fire({
+        title: '¿Eliminar activo?',
+        text: `Se eliminará permanentemente el equipo con folio "${idActivo}" y su historial.`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#dc2626',
+        cancelButtonColor: '#64748b',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = `modules/inventory/eliminar.php?id=${encodeURIComponent(idActivo)}`;
+        }
+    });
+}
+</script>
 
 <?php require_once 'includes/footer.php'; ?>

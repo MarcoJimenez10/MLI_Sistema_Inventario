@@ -21,10 +21,21 @@ if (!isset($_SESSION['usuario_id'])) {
 <body>
 
 <header class="topbar">
-    <h2 class="topbar-title">ML Industries - Gestión de Activos TI</h2>
+    <div class="topbar-left">
+        <img src="assets/img/logo_mli.svg" alt="ML Industries Logo" class="login-logo"/>
+        <h2 class="topbar-title">Gestión de Activos TI</h2>
+        <nav class="topbar-nav">
+            <a href="<?= $ruta_base ?>index.php" class="nav-link">Inventario</a>
+            <?php if ($_SESSION['rol'] === 'Administrador'): ?>
+                <a href="<?= $ruta_base ?>modules/users/index.php" class="nav-link">Usuarios</a>
+            <?php endif; ?>
+            <a href="<?= $ruta_base ?>modules/inventory/bitacora.php" class="nav-link">Bitácora</a>
+        </nav>
+    </div>
+
     <div class="topbar-user">
         <span><?= htmlspecialchars($_SESSION['nombre_completo']) ?> (<?= htmlspecialchars($_SESSION['rol']) ?>)</span>
-        <a href="<?= $ruta_base ?>logout.php" class="btn btn-secondary">Cerrar Sesión</a>
+        <a href="<?= $ruta_base ?>logout.php" class="btn btn-secondary btn-sm">Cerrar Sesión</a>
     </div>
 </header>
 

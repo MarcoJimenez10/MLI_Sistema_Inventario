@@ -1,7 +1,7 @@
 :root {
   --bg-main: #f1f5f9;
   --bg-card: #ffffff;
-  --primary: #0f172a;
+  --primary: #000965;
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --text-main: #334155;
@@ -268,4 +268,48 @@ tr:hover {
 .filter-actions {
     display: flex;
     gap: 8px;
+}
+
+
+
+/* Navegación en Barra Superior */
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.topbar-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Eliminar */
+.btn-danger {
+    background-color: var(--badge-scrap);
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+.action-group {
+    display: flex;
+    gap: 6px;
 }

@@ -97,7 +97,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="form-group">
                 <label for="marca">Marca *</label>
-                <input type="text" name="marca" id="marca" class="form-control" placeholder="Ej. HP, Dell, Lenovo, Zebra" required>
+                <select name="marca" id="marca" class="form-control" required>
+                    <option value="">Selecciona una opción...</option>
+                    <option value="HP">HP</option>
+                    <option value="Dell">Dell</option>
+                    <option value="Lenovo">Lenovo</option>
+                    <option value="Zebra">Zebra</option>
+                    <option value="Acer">Acer</option>
+                    <option value="Unifi">Unifi</option>
+                    <option value="Epson">Epson</option>
+                    <option value="Asus">Asus</option>
+                    <option value="Otro">Otro</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -123,7 +134,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="form-group">
                 <label for="ubicacion">Ubicación / Área</label>
-                <input type="text" name="ubicacion" id="ubicacion" class="form-control" placeholder="Ej. Almacén Sistemas, Línea 2, RH">
+                 <select name="ubicacion" id="ubicacion" class="form-control" required>
+                    <option value="">Selecciona una opción...</option>
+                    <option value="Sistemas">Sistemas</option>
+                    <option value="Logistica">Logistica</option>
+                    <option value="MPS">MPS</option>
+                    <option value="RH">RH</option>
+                    <option value="Safety">Safety</option>
+                    <option value="Entrenamiento">Entrenamiento</option>
+                    <option value="Almacén">Almacén Rollos</option>
+                    <option value="Corte">Corte</option>
+                    <option value="Producción">Producción</option>
+                    <option value="Mantenimiento">Mantenimiento</option>
+                    <option value="Ingenieria">Ingenieria</option>
+                    <option value="Mecanicos">Mecanicos</option>
+                    <option value="Nominas">Nominas</option>
+                </select>
             </div>
 
             <div class="form-group">

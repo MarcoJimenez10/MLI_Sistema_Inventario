@@ -1,13 +1,11 @@
 <?php
-// includes/footer.php
 ?>
-</div> <!-- Cierre del contenedor principal -->
+</div>
 
 <footer class="footer-main">
     &copy; <?= date('Y') ?> ML Industries - Departamento de Sistemas
 </footer>
 
-<!-- Librería SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <?php if (isset($_SESSION['login_exitoso'])): ?>
@@ -34,7 +32,7 @@
 
 <?php if (isset($_SESSION['alerta'])): ?>
     <script>
-        // AQUÍ PUEDES PONER TU ALERTA PERSONALIZADA DE SWEETALERT2
+
         Swal.fire({
             icon: "<?= $_SESSION['alerta']['icono'] ?>",
             title: "<?= $_SESSION['alerta']['titulo'] ?>",
